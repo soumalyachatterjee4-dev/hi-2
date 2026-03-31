@@ -1,0 +1,339 @@
+:root {
+    --bg-color: #f0f0f2;
+    --text-main: #111111;
+    --text-muted: #555555;
+    --pill-bg: rgba(255, 255, 255, 0.4);
+    /* Lower opacity for stronger glass */
+    --pill-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    --border-light: rgba(0, 0, 0, 0.08);
+    --accent: #5e6ad2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Faint noise texture for premium feel */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.03;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
+/* Background Words */
+.hero-text-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.text-bg-row {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    opacity: 0;
+    /* Will be faded in */
+}
+
+.text-bg-item {
+    font-size: clamp(4rem, 8vw, 10rem);
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.03);
+    text-transform: uppercase;
+    user-select: none;
+    padding: 0 1.5rem;
+    line-height: 1;
+    pointer-events: auto;
+    /* Enable hover despite parent pointer-events: none */
+    transition: color 0.3s ease;
+}
+
+.text-bg-item:hover {
+    color: rgba(0, 0, 0, 0.15);
+    /* Significantly darker on hover */
+}
+
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Logo Pill */
+.logo {
+    position: absolute;
+    left: 3rem;
+    background: var(--pill-bg);
+    backdrop-filter: blur(6px);
+    /* Stronger blur */
+    -webkit-backdrop-filter: blur(6px);
+    padding: 10px 24px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.1rem;
+    box-shadow: var(--pill-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Stronger flare edge */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.bold-text {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.accent-text {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Navbar Pill */
+.navbar {
+    background: var(--pill-bg);
+    backdrop-filter: blur(6px);
+    /* Stronger blur */
+    -webkit-backdrop-filter: blur(6px);
+    padding: 8px 32px;
+    border-radius: 100px;
+    box-shadow: var(--pill-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Stronger flare edge */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--text-main);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 2px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+}
+
+li.active .dot {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    text-align: center;
+    margin-top: -2rem;
+    /* visually perfectly center */
+}
+
+.hero-content {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -3px;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.title-line {
+    overflow: hidden;
+    position: relative;
+}
+
+.title-line>span,
+.title-line>div {
+    display: inline-block;
+}
+
+.period {
+    color: var(--text-main);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    opacity: 0;
+    /* JS will animate it in */
+    transform: translateY(20px);
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    /* JS will animate it in */
+    transform: translateY(20px);
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-primary {
+    background-color: var(--text-main);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Magnetic effect inner wrapper */
+.btn-text {
+    display: inline-block;
+    pointer-events: none;
+    position: relative;
+    z-index: 2;
+}
+
+/* Page Sections */
+.hero-wrapper {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.content-section {
+    min-height: 100vh;
+    width: 100vw;
+    padding: 100px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 50;
+    background-color: var(--bg-color);
+}
+
+/* Base alternate background for distinct sections */
+.content-section.alt-bg {
+    background-color: #ffffff;
+}
+
+.section-title {
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 800px;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-align: center;
+}

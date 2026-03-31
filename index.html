@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Studio - Animate Everything.</title>
+    <meta name="description" content="GSAP-powered motion for the modern web. Smooth, precise, and blazing fast.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- GSAP library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <div class="hero-wrapper" id="home">
+
+
+        <div class="hero-text-bg" id="bg-container">
+            <div class="text-bg-row">
+                <span class="text-bg-item">CREATE</span>
+                <span class="text-bg-item">DESIGN</span>
+                <span class="text-bg-item">BUILD</span>
+                <span class="text-bg-item">LAUNCH</span>
+                <span class="text-bg-item">CREATE</span>
+                <span class="text-bg-item">DESIGN</span>
+                <span class="text-bg-item">BUILD</span>
+                <span class="text-bg-item">LAUNCH</span>
+            </div>
+            <div class="text-bg-row">
+                <span class="text-bg-item">PIXEL</span>
+                <span class="text-bg-item">SPACE</span>
+                <span class="text-bg-item">STUDIO</span>
+                <span class="text-bg-item">CRAFT</span>
+                <span class="text-bg-item">PIXEL</span>
+                <span class="text-bg-item">SPACE</span>
+                <span class="text-bg-item">STUDIO</span>
+                <span class="text-bg-item">CRAFT</span>
+            </div>
+            <div class="text-bg-row">
+                <span class="text-bg-item">MOTION</span>
+                <span class="text-bg-item">FLUID</span>
+                <span class="text-bg-item">SMOOTH</span>
+                <span class="text-bg-item">DYNAMIC</span>
+                <span class="text-bg-item">MOTION</span>
+                <span class="text-bg-item">FLUID</span>
+                <span class="text-bg-item">SMOOTH</span>
+                <span class="text-bg-item">DYNAMIC</span>
+            </div>
+            <div class="text-bg-row">
+                <span class="text-bg-item">FUTURE</span>
+                <span class="text-bg-item">INNOVATE</span>
+                <span class="text-bg-item">DIGITAL</span>
+                <span class="text-bg-item">VISION</span>
+                <span class="text-bg-item">FUTURE</span>
+                <span class="text-bg-item">INNOVATE</span>
+                <span class="text-bg-item">DIGITAL</span>
+                <span class="text-bg-item">VISION</span>
+            </div>
+            <div class="text-bg-row">
+                <span class="text-bg-item">FLEX</span>
+                <span class="text-bg-item">INTERACT</span>
+                <span class="text-bg-item">EXPERIENCE</span>
+                <span class="text-bg-item">ENGAGE</span>
+                <span class="text-bg-item">FLEX</span>
+                <span class="text-bg-item">INTERACT</span>
+                <span class="text-bg-item">EXPERIENCE</span>
+                <span class="text-bg-item">ENGAGE</span>
+            </div>
+            <header class="header">
+                <div class="logo">
+                    <span class="bold-text">GSAP</span>
+                    <span class="accent-text">Studio</span>
+                </div>
+
+                <nav class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="#" class="nav-link">Home</a></li>
+                        <li><a href="#" class="nav-link">Features</a></li>
+                        <li class="active"><a href="#" class="nav-link">About</a>
+                            <div class="dot"></div>
+                        </li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div> <!-- End of hero-text-bg -->
+    </div> <!-- End of hero-wrapper -->
+
+    <section id="features" class="content-section alt-bg">
+        <h2 class="section-title">Features</h2>
+        <p class="section-content">
+            Unleash the full potential of your web experiences with silky smooth animations,
+            pixel-perfect positioning, and timeline control that gives you absolute power over
+            every moving element on the screen. Build digital visions that future audiences expect.
+        </p>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-content">
+            We are a studio dedicated to the craft of motion design. We believe that
+            interactions should feel organic, responsive, and delightful. By leveraging
+            the power of GSAP, we turn static layouts into dynamic, living spaces.
+        </p>
+    </section>
+
+    <section id="contact" class="content-section alt-bg">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-content">
+            Ready to bring your digital vision to life? Let's talk about your next big project.<br><br>
+            <a href="mailto:hello@gsapstudio.com"
+                style="color: var(--accent); font-weight: bold; text-decoration: none;">hello@gsapstudio.com</a>
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
