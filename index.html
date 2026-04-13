@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Foldit:wght@100..900&family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Foldit:wght@100..900&family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- GSAP library -->
@@ -107,18 +107,18 @@
             </div>
             <header class="header">
                 <div class="logo">
-                    <span class="bold-text">GSAP</span>
-                    <span class="accent-text">Studio</span>
+                    <img src="ghost.svg" alt="CodedCabin Logo" class="logo-img">
                 </div>
 
                 <nav class="navbar">
                     <ul class="nav-links">
-                        <li><a href="#" class="nav-link">Home</a></li>
-                        <li><a href="#" class="nav-link">Features</a></li>
-                        <li class="active"><a href="#" class="nav-link">About</a>
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li class="active"><a href="#about" class="nav-link">About</a>
                             <div class="dot"></div>
                         </li>
-                        <li><a href="#" class="nav-link">Contact</a></li>
+                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
             </header>
@@ -308,6 +308,48 @@
         </div>
     </section>
 
+    <!-- ── PORTFOLIO PREVIEW ── -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="portfolio-container">
+        <p class="portfolio-label">Selected Works</p>
+
+        <ul class="projects-list" id="projectList">
+          <li class="project-item" data-index="0">
+            <span class="project-num">01</span>
+            <span class="project-name">IronCraft</span>
+            <span class="project-tag">Repair Service UI</span>
+          </li>
+          <li class="project-item" data-index="1">
+            <span class="project-num">02</span>
+            <span class="project-name">Horizons</span>
+            <span class="project-tag">Workspace Landing Page</span>
+          </li>
+          <li class="project-item" data-index="2">
+            <span class="project-num">03</span>
+            <span class="project-name">Vivid Studio</span>
+            <span class="project-tag">Creative Agency</span>
+          </li>
+          <li class="project-item" data-index="3">
+            <span class="project-num">04</span>
+            <span class="project-name">Luminary</span>
+            <span class="project-tag">Neon Dark UI</span>
+          </li>
+          <li class="project-item" data-index="4">
+            <span class="project-num">05</span>
+            <span class="project-name">ABCreative</span>
+            <span class="project-tag">Brand Agency</span>
+          </li>
+        </ul>
+
+        <p class="portfolio-footer">CodedCabin &mdash; Portfolio &mdash; 2026</p>
+      </div>
+
+      <!-- Floating preview card -->
+      <div class="preview-card" id="previewCard">
+        <img id="previewImg" src="" alt="Project preview">
+      </div>
+    </section>
+
     <!-- ── STATEMENT ── -->
     <section class="statement-section">
         <div class="statement-inner">
@@ -331,26 +373,6 @@
             <span class="cf-srv">Visual Identity</span>
             <span class="cf-srv">SEO &amp; Analytics</span>
             <span class="cf-srv">Lead Generation</span>
-        </div>
-
-        <!-- Form + Heading -->
-        <div class="cf-form-block">
-            <p class="cf-form-heading">Start a project</p>
-            <form class="cf-form" onsubmit="return false;">
-                <div class="cf-field">
-                    <input type="text" placeholder="Name" autocomplete="name" required />
-                </div>
-                <div class="cf-field">
-                    <input type="email" placeholder="Email" autocomplete="email" required />
-                </div>
-                <div class="cf-field">
-                    <input type="text" placeholder="Company (optional)" autocomplete="organization" />
-                </div>
-                <div class="cf-field">
-                    <textarea placeholder="Tell us about your project" rows="3"></textarea>
-                </div>
-                <button type="submit" class="cf-submit">Send Message</button>
-            </form>
         </div>
 
         <!-- Four-Column Footer Grid -->
